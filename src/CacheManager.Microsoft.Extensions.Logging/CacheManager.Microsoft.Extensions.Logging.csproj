@@ -2,10 +2,12 @@
   <Import Project="..\..\tools\common.props" />
   <PropertyGroup>
     <Description>CacheManager extension package to work with Microsoft.Extensions.Logging as logging provider. CacheManager is an open source caching abstraction layer for .NET written in C#. The ASP.NET Core logging provides a bridge to the Microsoft.Extensions.Logging framework.</Description>
-    <TargetFrameworks>net45;netstandard1.2</TargetFrameworks>
+    <TargetFrameworks>net45;netstandard2.0</TargetFrameworks>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageTags>Caching;Cache;CacheManager;Distributed Cache;StackExchange Redis;Azure AppFabric;Memcached</PackageTags>
+    <Version>1.1.3.1</Version>
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\CacheManager.Core\CacheManager.Core.csproj" />
@@ -13,8 +15,9 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.Logging" Version="1.0.2" />
   </ItemGroup>
-  <ItemGroup Condition=" '$(TargetFramework)' == 'net45' ">
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net461' ">
   </ItemGroup>
-  <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard1.2' ">
+  <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' ">
   </ItemGroup>
+  <Import Project="..\..\custom.targets" />
 </Project>

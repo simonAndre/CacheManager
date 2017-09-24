@@ -1,0 +1,6 @@
+<Project>
+  <Target Name="CopyPackage" AfterTargets="Pack">
+    <Copy Condition="'$(localnugetrepo)'!=''" SourceFiles="bin\Debug\$(PackageId).$(PackageVersion).nupkg" DestinationFolder="$(localnugetrepo)" />
+  </Target>
+  
+</Project>
